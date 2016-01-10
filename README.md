@@ -1,6 +1,5 @@
 # blog
 <p>a programmer web page</p>
-<hr>
 <ul>
     <li>Node.js 0.10</li>
     <li>MongoDB 2.4</li>
