@@ -8,7 +8,7 @@ import {Component} from 'angular2/core';
 
 export class AppComponent {
 
-    public static PROD = true;
-    public title = 'Ultimos posts';
+    public static PROD = false;
+    public title = 'One on a tower';
     
 }

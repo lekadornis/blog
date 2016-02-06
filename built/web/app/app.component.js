@@ -18,9 +18,9 @@ System.register(['angular2/core'], function(exports_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = 'Ultimos posts';
+                    this.title = 'One on a tower';
                 }
-                AppComponent.PROD = true;
+                AppComponent.PROD = false;
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'home',

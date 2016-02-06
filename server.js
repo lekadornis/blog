@@ -21,6 +21,9 @@ var server = {
         webApp.use('/app', express.static(
             path.resolve('built/web/app')
         ));
+        webApp.use('/posts', express.static(
+            path.resolve('built/web/posts')
+        ));
 
         webApp.get('/', homeController.index);
         webApp.get('/unit-tests', testsController.index);
