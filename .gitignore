@@ -1,4 +1,5 @@
 /documents/
 /node_modules/
 /nbproject/
-/spec/
+/typings/
+typings.json

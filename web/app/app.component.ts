@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
     public posts: Post[];
     
     ngOnInit() {
-        this.getPosts();
+        this.getPosts().then(posts => this.posts = posts);
     }
     
     getPosts() {
-        this._postsService.getPosts().then(posts => this.posts = posts);
+        return this._postsService.getPosts();
     }
 }

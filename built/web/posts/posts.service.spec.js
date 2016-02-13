@@ -20,3 +20,4 @@ System.register(['./posts.service'], function(exports_1) {
         }
     }
 });
+//# sourceMappingURL=posts.service.spec.js.map

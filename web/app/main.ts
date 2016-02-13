@@ -1,6 +1,6 @@
-import {bootstrap}    from 'angular2/platform/browser';
+import {bootstrap}      from 'angular2/platform/browser';
 import {enableProdMode} from 'angular2/core';
-import {AppComponent} from './app.component';
+import {AppComponent}   from './app.component';
 
 if(AppComponent.PROD) {
     enableProdMode();

@@ -10,3 +10,4 @@ System.register([], function(exports_1) {
         }
     }
 });
+//# sourceMappingURL=mock-posts.js.map

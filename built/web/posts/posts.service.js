@@ -35,3 +35,4 @@ System.register(['angular2/core', './mock-posts'], function(exports_1) {
         }
     }
 });
+//# sourceMappingURL=posts.service.js.map

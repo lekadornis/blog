@@ -25,6 +25,7 @@ var server = {
         ));
 
         webApp.get('/', homeController.index);
+        webApp.get('/unit-tests', homeController.unitTests);
         webApp.get('*', defaultsController.notFound);
     },
     start : function () {

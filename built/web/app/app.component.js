@@ -25,11 +25,11 @@ System.register(['angular2/core', '../posts/posts.service'], function(exports_1)
                     this.title = 'One on a tower';
                 }
                 AppComponent.prototype.ngOnInit = function () {
-                    this.getPosts();
+                    var _this = this;
+                    this.getPosts().then(function (posts) { return _this.posts = posts; });
                 };
                 AppComponent.prototype.getPosts = function () {
-                    var _this = this;
-                    this._postsService.getPosts().then(function (posts) { return _this.posts = posts; });
+                    return this._postsService.getPosts();
                 };
                 AppComponent.PROD = false;
                 AppComponent = __decorate([
@@ -47,3 +47,4 @@ System.register(['angular2/core', '../posts/posts.service'], function(exports_1)
         }
     }
 });
+//# sourceMappingURL=app.component.js.map
