@@ -6,10 +6,12 @@ System.register(['./app.component'], function(exports_1) {
                 app_component_1 = app_component_1_1;
             }],
         execute: function() {
-            describe('App Component', function () {
-                it('has title', function () {
-                    var appComponent = new app_component_1.AppComponent();
-                    expect(appComponent.title).not.toEqual(undefined);
+            describe('AppComponent', function () {
+                beforeEach(function () {
+                    this.app = new app_component_1.AppComponent();
+                });
+                it('should have title property', function () {
+                    expect(this.app.title).toBe('One on a tower');
                 });
             });
         }

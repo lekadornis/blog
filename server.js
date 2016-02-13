@@ -3,7 +3,6 @@
 var express = require('express'),
     webApp = express(),
     homeController = require(process.cwd() + '/web/controllers/home'),
-    testsController = require(process.cwd() + '/web/controllers/tests'),
     defaultsController = require(process.cwd() + '/web/controllers/defaults'),
     path = require('path');
 
@@ -26,7 +25,6 @@ var server = {
         ));
 
         webApp.get('/', homeController.index);
-        webApp.get('/unit-tests', testsController.index);
         webApp.get('*', defaultsController.notFound);
     },
     start : function () {

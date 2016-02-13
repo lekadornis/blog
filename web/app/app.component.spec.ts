@@ -1,10 +1,13 @@
 import {AppComponent} from './app.component';
 
-describe('App Component', () => {
-  
-    it('has title', () => {
-        let appComponent = new AppComponent();
-        expect(appComponent.title).not.toEqual(undefined);
+describe('AppComponent', () => {
+
+    beforeEach(function() {
+        this.app = new AppComponent();
     });
-  
+
+    it('should have title property', function() {
+        expect(this.app.title).toBe('One on a tower');
+    });
+
 });

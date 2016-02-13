@@ -7,9 +7,11 @@ System.register(['./posts.service'], function(exports_1) {
             }],
         execute: function() {
             describe('Posts Service', function () {
-                it('return posts', function (done) {
-                    var postsService = new posts_service_1.PostsService();
-                    postsService.getPosts().then(function (posts) {
+                beforeEach(function () {
+                    this.postsService = new posts_service_1.PostsService();
+                });
+                it('should return posts', function (done) {
+                    this.postsService.getPosts().then(function (posts) {
                         expect(posts.length).toBeGreaterThan(1);
                         done();
                     });
