@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../posts/posts.service'], function(exports_1) {
+System.register(['angular2/core', '../posts/test.service', 'angular2/http'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,15 +8,18 @@ System.register(['angular2/core', '../posts/posts.service'], function(exports_1)
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, posts_service_1;
+    var core_1, test_service_1, http_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (posts_service_1_1) {
-                posts_service_1 = posts_service_1_1;
+            function (test_service_1_1) {
+                test_service_1 = test_service_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -25,11 +28,11 @@ System.register(['angular2/core', '../posts/posts.service'], function(exports_1)
                     this.title = 'One on a tower';
                 }
                 AppComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this.getPosts().then(function (posts) { return _this.posts = posts; });
+                    this.getPosts();
                 };
                 AppComponent.prototype.getPosts = function () {
-                    return this._postsService.getPosts();
+                    var _this = this;
+                    this._postsService.getPosts().subscribe(function (response) { return _this.posts = response.json(); });
                 };
                 AppComponent.PROD = false;
                 AppComponent = __decorate([
@@ -37,9 +40,9 @@ System.register(['angular2/core', '../posts/posts.service'], function(exports_1)
                         selector: 'home',
                         styleUrls: ['styles/app.css'],
                         templateUrl: 'views/app.html',
-                        providers: [posts_service_1.PostsService]
+                        providers: [test_service_1.TestService, http_1.HTTP_PROVIDERS]
                     }), 
-                    __metadata('design:paramtypes', [posts_service_1.PostsService])
+                    __metadata('design:paramtypes', [test_service_1.TestService])
                 ], AppComponent);
                 return AppComponent;
             })();
