@@ -1,7 +1,8 @@
 import {Component, OnInit}      from 'angular2/core';
-import {TestService}            from '../posts/test.service';
+import {TestService}            from '../posts/posts.service';
 import {HTTP_PROVIDERS}         from 'angular2/http';
 import {Post}                   from '../posts/post';
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'home',
@@ -16,15 +17,17 @@ export class AppComponent implements OnInit {
     
     public static PROD = false;
     public title = 'One on a tower';
-    public posts: Post[];
+    public posts : Post[];
     
     ngOnInit() {
         this.getPosts();
     }
     
     getPosts() {
-        this._postsService.getPosts().subscribe(
-            response => this.posts = response.json()
-        );
+        this._postsService.getPosts()
+            .map(response => response.json())
+            .subscribe(
+                posts => this.posts = posts
+            );
     }
 }

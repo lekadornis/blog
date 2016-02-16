@@ -1,4 +1,4 @@
-System.register(['angular2/core', './mock-posts'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,30 +8,34 @@ System.register(['angular2/core', './mock-posts'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, mock_posts_1;
-    var PostsService;
+    var core_1, http_1;
+    var TestService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (mock_posts_1_1) {
-                mock_posts_1 = mock_posts_1_1;
+            function (http_1_1) {
+                http_1 = http_1_1;
             }],
         execute: function() {
-            PostsService = (function () {
-                function PostsService() {
+            TestService = (function () {
+                function TestService(http) {
+                    this.http = http;
                 }
-                PostsService.prototype.getPosts = function () {
-                    return Promise.resolve(mock_posts_1.POSTS);
+                TestService.prototype.getPosts = function () {
+                    return this.http.get('get/posts');
                 };
-                PostsService = __decorate([
+                TestService = __decorate([
+                    core_1.Component({
+                        providers: [http_1.HTTP_PROVIDERS]
+                    }),
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
-                ], PostsService);
-                return PostsService;
+                    __metadata('design:paramtypes', [http_1.Http])
+                ], TestService);
+                return TestService;
             })();
-            exports_1("PostsService", PostsService);
+            exports_1("TestService", TestService);
         }
     }
 });
