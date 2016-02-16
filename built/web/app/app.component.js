@@ -43,9 +43,9 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http', 'rx
                         selector: 'home',
                         styleUrls: ['styles/app.css'],
                         templateUrl: 'views/app.html',
-                        providers: [posts_service_1.TestService, http_1.HTTP_PROVIDERS]
+                        providers: [posts_service_1.PostsService, http_1.HTTP_PROVIDERS]
                     }), 
-                    __metadata('design:paramtypes', [posts_service_1.TestService])
+                    __metadata('design:paramtypes', [posts_service_1.PostsService])
                 ], AppComponent);
                 return AppComponent;
             })();

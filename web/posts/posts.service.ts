@@ -6,7 +6,7 @@ import {Http, HTTP_PROVIDERS}   from 'angular2/http';
 })
 
 @Injectable()
-export class TestService {
+export class PostsService {
 
     public http: Http;
     

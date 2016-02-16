@@ -1,5 +1,5 @@
 import {Component, OnInit}      from 'angular2/core';
-import {TestService}            from '../posts/posts.service';
+import {PostsService}            from '../posts/posts.service';
 import {HTTP_PROVIDERS}         from 'angular2/http';
 import {Post}                   from '../posts/post';
 import 'rxjs/add/operator/map';
@@ -8,12 +8,12 @@ import 'rxjs/add/operator/map';
     selector: 'home',
     styleUrls: ['styles/app.css'],
     templateUrl: 'views/app.html',
-    providers: [TestService, HTTP_PROVIDERS]
+    providers: [PostsService, HTTP_PROVIDERS]
 })
 
 export class AppComponent implements OnInit {
     
-    constructor(private _postsService: TestService) { }
+    constructor(private _postsService: PostsService) { }
     
     public static PROD = false;
     public title = 'One on a tower';
