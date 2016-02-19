@@ -36,7 +36,6 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http', 'rx
                 AppComponent.prototype.getPosts = function () {
                     return this._postsService.getPosts();
                 };
-                AppComponent.PROD = false;
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'home',

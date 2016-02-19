@@ -12,9 +12,7 @@ System.register(['angular2/platform/browser', 'angular2/core', './app.component'
                 app_component_1 = app_component_1_1;
             }],
         execute: function() {
-            if (app_component_1.AppComponent.PROD) {
-                core_1.enableProdMode();
-            }
+            core_1.enableProdMode();
             browser_1.bootstrap(app_component_1.AppComponent);
         }
     }
