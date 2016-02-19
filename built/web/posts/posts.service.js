@@ -24,7 +24,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1) {
                     this.http = http;
                 }
                 PostsService.prototype.getPosts = function () {
-                    return this.http.get('get/posts');
+                    return this.http.get('get/posts').map(function (response) { return response.json(); });
                 };
                 PostsService = __decorate([
                     core_1.Component({

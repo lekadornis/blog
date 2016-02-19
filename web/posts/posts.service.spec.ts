@@ -1,18 +1,27 @@
+import {
+  beforeEachProviders,
+  describe,
+  expect,
+  it,
+  injectAsync
+} from 'angular2/testing';
+import {HTTP_PROVIDERS}   from 'angular2/http';
+
 import {PostsService} from './posts.service';
 
 describe('Posts Service', () => {
   
-    beforeEach(function() {
-        this.postsService = new PostsService();
-    });
+    beforeEachProviders(() => [
+        PostsService,
+        HTTP_PROVIDERS
+    ]);
     
-    it('should return posts', function(done) {
-        this.postsService.getPosts().then(
-            function(posts) {
+    it('should return posts', injectAsync([PostsService], 
+        (service: PostsService) => {
+            return service.getPosts().toPromise().then((posts) => {
                 expect(posts.length).toBeGreaterThan(1);
-                done();
-            }
-        );
-    });
+            });
+        }
+    ));
 
 });

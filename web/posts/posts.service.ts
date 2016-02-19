@@ -15,7 +15,7 @@ export class PostsService {
     }
     
     getPosts() {
-        return this.http.get('get/posts');
+        return this.http.get('get/posts').map(response => response.json());
     }
 
 }

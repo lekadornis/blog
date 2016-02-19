@@ -13,6 +13,7 @@
         <script src="node_modules/systemjs/dist/system.src.js"></script>
         <script src="node_modules/rxjs/bundles/Rx.js"></script>
         <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+        <script src="node_modules/angular2/bundles/http.dev.js"></script>
         <script src="node_modules/angular2/bundles/testing.dev.js"></script>
         <script>
             System.config({
@@ -22,8 +23,8 @@
                 }
             });
             Promise.all([
-                System.import('posts/posts.service.spec'),
-                System.import('app/app.component.spec')
+                System.import('app/app.component.spec'),
+                System.import('posts/posts.service.spec')
             ]).then(window.onload).catch(console.error.bind(console));
         </script>
     </body>
