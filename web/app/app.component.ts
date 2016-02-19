@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     
     constructor(private _postsService: PostsService) { }
     
-    public static PROD = false;
+    public static PROD = true;
     public title = 'One on a tower';
     public posts : Post[];
     
