@@ -1,10 +1,8 @@
 # blog
-<p>A programmer's web page using the mean stack</p>
+<p>A personal site for learning purposes</p>
 <ul>
     <li>OpenShift</li>
     <li>Node.js</li>
-    <li>Jenkins</li>
     <li>Typescript</li>
-    <li>Angular2</li>
-    <li>Express</li>
+    <li>Angular 2</li>
 </ul>

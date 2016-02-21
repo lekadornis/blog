@@ -2,9 +2,9 @@
 
 var express = require('express'),
     webApp = express(),
-    homeController = require(process.cwd() + '/web/controllers/home'),
-    apiController = require(process.cwd() + '/web/controllers/api'),
-    defaultsController = require(process.cwd() + '/web/controllers/defaults'),
+    homeController = require(process.cwd() + '/core/controllers/home'),
+    apiController = require(process.cwd() + '/core/controllers/api'),
+    defaultsController = require(process.cwd() + '/core/controllers/defaults'),
     path = require('path');
 
 var server = {

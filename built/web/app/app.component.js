@@ -26,7 +26,7 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http', 'rx
             AppComponent = (function () {
                 function AppComponent(_postsService) {
                     this._postsService = _postsService;
-                    this.title = 'One on a tower';
+                    this.title = 'El Commit';
                 }
                 AppComponent.prototype.ngOnInit = function () {
                     var _this = this;

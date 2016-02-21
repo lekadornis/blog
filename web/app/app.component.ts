@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     
     constructor(private _postsService: PostsService) { }
     
-    public title = 'One on a tower';
+    public title = 'El Commit';
     public posts : Post[];
     
     ngOnInit() {
