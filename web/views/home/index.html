@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Abraham Mesa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+        <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+        <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+        <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <script src="node_modules/rxjs/bundles/Rx.js"></script>
+        <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+        <script src="node_modules/angular2/bundles/http.dev.js"></script>
+        <script>
+            System.config({
+                packages: {
+                    app: {
+                        format: 'register',
+                        defaultExtension: 'js'
+                    },
+                    posts: {defaultExtension: 'js'}
+                }              
+            });
+            System.import('app/main')
+                    .then(null, console.error.bind(console));
+        </script>
+    </head>
+    <body>
+        <home>Cargando...</home>
+    </body>
+</html>

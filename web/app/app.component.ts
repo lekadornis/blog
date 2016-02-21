@@ -1,8 +1,7 @@
 import {Component, OnInit}      from 'angular2/core';
-import {PostsService}            from '../posts/posts.service';
+import {PostsService}           from '../posts/posts.service';
 import {HTTP_PROVIDERS}         from 'angular2/http';
 import {Post}                   from '../posts/post';
-import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'home',

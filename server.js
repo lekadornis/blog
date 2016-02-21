@@ -3,6 +3,8 @@
 var express = require('express'),
     webApp = express(),
     homeController = require(process.cwd() + '/core/controllers/home'),
+    testsController = require(process.cwd() + '/core/controllers/tests'),
+    blogController = require(process.cwd() + '/core/controllers/blog'),
     apiController = require(process.cwd() + '/core/controllers/api'),
     defaultsController = require(process.cwd() + '/core/controllers/defaults'),
     path = require('path');
@@ -25,14 +27,15 @@ var server = {
             path.resolve('built/web/posts')
         ));
 
-        webApp.get('/', homeController.index);
-        webApp.get('/unit-tests', homeController.unitTests);
         webApp.get('/get/posts', apiController.getPosts);
+        webApp.get('/el-commit', blogController.index);
+        webApp.get('/ng-tests', testsController.unitTests);
+        webApp.get('/', homeController.index);
         webApp.get('*', defaultsController.notFound);
     },
     start : function () {
         this.createRoutes();
-        var port = process.env.OPENSHIFT_NODEJS_PORT || 8080,
+        var port = process.env.OPENSHIFT_NODEJS_PORT || '8080',
             ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
             turnOnMessage = Date(Date.now())
                                 + ' - ' + ipaddress
