@@ -9,7 +9,7 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http'], fu
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, posts_service_1, http_1;
-    var AppComponent;
+    var BlogComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -22,32 +22,32 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http'], fu
                 http_1 = http_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent(_postsService) {
+            BlogComponent = (function () {
+                function BlogComponent(_postsService) {
                     this._postsService = _postsService;
                     this.title = 'El Commit';
                 }
-                AppComponent.prototype.ngOnInit = function () {
+                BlogComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this.getPosts()
                         .subscribe(function (posts) { return _this.posts = posts; });
                 };
-                AppComponent.prototype.getPosts = function () {
+                BlogComponent.prototype.getPosts = function () {
                     return this._postsService.getPosts();
                 };
-                AppComponent = __decorate([
+                BlogComponent = __decorate([
                     core_1.Component({
-                        selector: 'home',
-                        styleUrls: ['styles/app.css'],
-                        templateUrl: 'views/app.html',
+                        selector: 'blog',
+                        styleUrls: ['styles/blog.css'],
+                        templateUrl: 'views/blog/posts.html',
                         providers: [posts_service_1.PostsService, http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [posts_service_1.PostsService])
-                ], AppComponent);
-                return AppComponent;
+                ], BlogComponent);
+                return BlogComponent;
             })();
-            exports_1("AppComponent", AppComponent);
+            exports_1("BlogComponent", BlogComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=blog.component.js.map

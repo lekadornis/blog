@@ -20,8 +20,8 @@ var server = {
         webApp.use('/styles', express.static(
             path.resolve('web/styles')
         ));
-        webApp.use('/app', express.static(
-            path.resolve('built/web/app')
+        webApp.use('/blog', express.static(
+            path.resolve('built/web/blog')
         ));
         webApp.use('/posts', express.static(
             path.resolve('built/web/posts')

@@ -1,10 +1,10 @@
-System.register(['angular2/testing', 'angular2/http', 'angular2/core', 'rxjs/add/operator/map', 'rxjs/add/operator/toPromise', 'rxjs/Rx', './app.component', '../posts/posts.service'], function(exports_1) {
+System.register(['angular2/testing', 'angular2/http', 'angular2/core', 'rxjs/add/operator/map', 'rxjs/add/operator/toPromise', 'rxjs/Rx', './blog.component', '../posts/posts.service'], function(exports_1) {
     var __extends = (this && this.__extends) || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
-    var testing_1, http_1, core_1, Rx_1, app_component_1, posts_service_1;
+    var testing_1, http_1, core_1, Rx_1, blog_component_1, posts_service_1;
     var MockPostsService;
     return {
         setters:[
@@ -22,8 +22,8 @@ System.register(['angular2/testing', 'angular2/http', 'angular2/core', 'rxjs/add
             function (Rx_1_1) {
                 Rx_1 = Rx_1_1;
             },
-            function (app_component_1_1) {
-                app_component_1 = app_component_1_1;
+            function (blog_component_1_1) {
+                blog_component_1 = blog_component_1_1;
             },
             function (posts_service_1_1) {
                 posts_service_1 = posts_service_1_1;
@@ -42,17 +42,17 @@ System.register(['angular2/testing', 'angular2/http', 'angular2/core', 'rxjs/add
                 };
                 return MockPostsService;
             })(posts_service_1.PostsService);
-            testing_1.describe('AppComponent', function () {
+            testing_1.describe('Blog Component', function () {
                 testing_1.beforeEachProviders(function () { return [
                     core_1.provide(posts_service_1.PostsService, { useClass: MockPostsService }),
-                    app_component_1.AppComponent,
+                    blog_component_1.BlogComponent,
                     http_1.HTTP_PROVIDERS
                 ]; });
                 testing_1.it('should have a title defined', function () {
-                    var app = new app_component_1.AppComponent(null);
+                    var app = new blog_component_1.BlogComponent(null);
                     testing_1.expect(app.title).toBeDefined();
                 });
-                testing_1.it('posts service should return posts', testing_1.injectAsync([app_component_1.AppComponent], function (service) {
+                testing_1.it('posts service should return posts', testing_1.injectAsync([blog_component_1.BlogComponent], function (service) {
                     return service.getPosts().toPromise().then(function (posts) {
                         testing_1.expect(posts.length).toBeGreaterThan(1);
                     });
@@ -61,4 +61,4 @@ System.register(['angular2/testing', 'angular2/http', 'angular2/core', 'rxjs/add
         }
     }
 });
-//# sourceMappingURL=app.component.spec.js.map
+//# sourceMappingURL=blog.component.spec.js.map

@@ -18,12 +18,12 @@
         <script>
             System.config({
                 packages: {
-                    app: {defaultExtension: 'js'},
+                    blog: {defaultExtension: 'js'},
                     posts: {defaultExtension: 'js'}
                 }
             });
             Promise.all([
-                System.import('app/app.component.spec'),
+                System.import('blog/blog.component.spec'),
                 System.import('posts/posts.service.spec')
             ]).then(window.onload).catch(console.error.bind(console));
         </script>

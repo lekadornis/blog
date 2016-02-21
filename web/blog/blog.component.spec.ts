@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import {Observable} from 'rxjs/Rx';
 
-import {AppComponent} from './app.component';
+import {BlogComponent} from './blog.component';
 import {PostsService} from '../posts/posts.service';
 
 class MockPostsService extends PostsService {
@@ -26,21 +26,21 @@ class MockPostsService extends PostsService {
     }
 }
 
-describe('AppComponent', () => {
+describe('Blog Component', () => {
 
     beforeEachProviders(() => [
         provide(PostsService, {useClass: MockPostsService}), 
-        AppComponent,
+        BlogComponent,
         HTTP_PROVIDERS
     ]);
     
     it('should have a title defined', function() {
-        let app = new AppComponent(null);
+        let app = new BlogComponent(null);
         expect(app.title).toBeDefined();
     });
     
-    it('posts service should return posts', injectAsync([AppComponent], 
-        (service: AppComponent) => {
+    it('posts service should return posts', injectAsync([BlogComponent], 
+        (service: BlogComponent) => {
             return service.getPosts().toPromise().then((posts) => {
                 expect(posts.length).toBeGreaterThan(1);
             });

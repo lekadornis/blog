@@ -16,18 +16,18 @@
         <script>
             System.config({
                 packages: {
-                    app: {
+                    blog: {
                         format: 'register',
                         defaultExtension: 'js'
                     },
                     posts: {defaultExtension: 'js'}
                 }              
             });
-            System.import('app/main')
+            System.import('blog/main')
                     .then(null, console.error.bind(console));
         </script>
     </head>
     <body>
-        <home>Cargando...</home>
+        <blog>Cargando...</blog>
     </body>
 </html>

@@ -4,13 +4,13 @@ import {HTTP_PROVIDERS}         from 'angular2/http';
 import {Post}                   from '../posts/post';
 
 @Component({
-    selector: 'home',
-    styleUrls: ['styles/app.css'],
-    templateUrl: 'views/app.html',
+    selector: 'blog',
+    styleUrls: ['styles/blog.css'],
+    templateUrl: 'views/blog/posts.html',
     providers: [PostsService, HTTP_PROVIDERS]
 })
 
-export class AppComponent implements OnInit {
+export class BlogComponent implements OnInit {
     
     constructor(private _postsService: PostsService) { }
     
