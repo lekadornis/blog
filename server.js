@@ -2,7 +2,6 @@
 
 var express = require('express'),
     webApp = express(),
-    homeController = require(process.cwd() + '/core/controllers/home'),
     testsController = require(process.cwd() + '/core/controllers/tests'),
     blogController = require(process.cwd() + '/core/controllers/blog'),
     apiController = require(process.cwd() + '/core/controllers/api'),
@@ -28,9 +27,8 @@ var server = {
         ));
 
         webApp.get('/get/posts', apiController.getPosts);
-        webApp.get('/el-commit', blogController.index);
         webApp.get('/ng-tests', testsController.unitTests);
-        webApp.get('/', homeController.index);
+        webApp.get('/', blogController.index);
         webApp.get('*', defaultsController.notFound);
     },
     start : function () {

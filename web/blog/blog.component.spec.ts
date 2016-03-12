@@ -42,7 +42,7 @@ describe('Blog Component', () => {
     it('posts service should return posts', injectAsync([BlogComponent], 
         (service: BlogComponent) => {
             return service.getPosts().toPromise().then((posts) => {
-                expect(posts.length).toBeGreaterThan(1);
+                expect(posts.length).toBeGreaterThan(0);
             });
         }
     ));

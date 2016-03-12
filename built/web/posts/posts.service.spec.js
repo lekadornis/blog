@@ -19,7 +19,7 @@ System.register(['angular2/testing', 'angular2/http', './posts.service'], functi
                 ]; });
                 testing_1.it('should return posts', testing_1.injectAsync([posts_service_1.PostsService], function (service) {
                     return service.getPosts().toPromise().then(function (posts) {
-                        testing_1.expect(posts.length).toBeGreaterThan(1);
+                        testing_1.expect(posts.length).toBeGreaterThan(0);
                     });
                 }));
             });

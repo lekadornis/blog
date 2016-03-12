@@ -54,7 +54,7 @@ System.register(['angular2/testing', 'angular2/http', 'angular2/core', 'rxjs/add
                 });
                 testing_1.it('posts service should return posts', testing_1.injectAsync([blog_component_1.BlogComponent], function (service) {
                     return service.getPosts().toPromise().then(function (posts) {
-                        testing_1.expect(posts.length).toBeGreaterThan(1);
+                        testing_1.expect(posts.length).toBeGreaterThan(0);
                     });
                 }));
             });

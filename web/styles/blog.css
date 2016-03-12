@@ -1,10 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
-@import url(https://fonts.googleapis.com/css?family=Fugaz+One);
 
-home {
-    font-family: 'Inconsolata';
-    font-weight: 400;
-    padding-bottom:40px;
+body { 
+    margin: 60px auto; 
+    width: 70%; 
 }
 
 .post-title {
@@ -19,9 +17,11 @@ home {
     font-weight: 400;
 }
 
-#title {
-    font-family: 'Fugaz One', cursive;
+#blog-name {
+    font-family: 'Inconsolata';
     font-size: 5em;
+    font-weight: 700;
+    letter-spacing: 5px;
 }
 
 .container {
@@ -42,10 +42,6 @@ home {
 .col-min {
     min-width:300px;
     width:100%;
-}
-
-p { 
-    text-indent: 50px;
 }
 
 h1 {
@@ -78,4 +74,11 @@ h1 {
 .content:before {
     font-size:12px;
     letter-spacing:1px;
+}
+
+.label {
+    vertical-align: middle;
+    font-size: 50%;
+    font-weight: 700;
+    border-radius: .25em;
 }

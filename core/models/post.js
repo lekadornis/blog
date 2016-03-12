@@ -2,11 +2,12 @@
 
 var mongoose = require(process.cwd() + '/core/dbConnection');
 
-var post = mongoose.model('posts', {
-        title: {
-            title: String,
-            content: String
-        }
-    });
+var schema = new mongoose.Schema({
+    title: 'string',
+    content: 'string',
+    date: 'string'
+});
+
+var post = mongoose.model('posts', schema);
 
 module.exports = post;

@@ -1,10 +1,13 @@
-<h1 id="title">{{title}}</h1>
+<h1 id="blog-name">{{title}}</h1>
 
 <div class="container">
     <div class="row row-centered">
         <div *ngFor="#post of posts" class="col-xs-6 col-centered col-min">
-            <div class="item text-justify post-title">{{post.title}}</div>
-            <div class="item text-justify post-body">{{post.content}}</div>
+            <div class="item text-justify post-title">
+                <span class="label label-info">{{post.date}}</span>
+                {{post.title}}
+            </div>
+            <div class="item text-justify post-body" [innerHTML]="post.content"></div>
         </div>
     </div>
 </div>

@@ -25,7 +25,7 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http'], fu
             BlogComponent = (function () {
                 function BlogComponent(_postsService) {
                     this._postsService = _postsService;
-                    this.title = 'El Commit';
+                    this.title = 'COMMIT';
                 }
                 BlogComponent.prototype.ngOnInit = function () {
                     var _this = this;
