@@ -3,7 +3,7 @@
 var post = require(process.cwd() + '/core/models/post'),
     posts = {
         getAll: function () {
-            return post.find({}).exec();
+            return post.find({}).sort( { date: -1 } ).exec();
         }
     };
 

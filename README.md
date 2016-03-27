@@ -5,4 +5,5 @@
     <li>Node.js</li>
     <li>Typescript</li>
     <li>Angular 2</li>
+    <li>Jasmine</li>
 </ul>
