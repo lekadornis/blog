@@ -5,7 +5,7 @@
         <div *ngFor="#post of posts" class="col-xs-6 col-centered col-min">
             <div class="item text-justify post-title">
                 <span class="label label-info">{{post.date}}</span>
-                {{post.title}}
+                <span [innerHTML]="post.title"></span>
             </div>
             <div class="item text-justify post-body" [innerHTML]="post.content"></div>
         </div>

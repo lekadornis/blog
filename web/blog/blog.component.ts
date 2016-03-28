@@ -14,7 +14,7 @@ export class BlogComponent implements OnInit {
     
     constructor(private _postsService: PostsService) { }
     
-    public title = 'COMMIT';
+    public title = 'DEFN';
     public posts : Post[];
     
     ngOnInit() {
