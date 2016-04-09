@@ -83,3 +83,13 @@ h1 {
     font-weight: 700;
     border-radius: .25em;
 }
+
+.item {
+   text-align: left;
+}
+   
+@media (min-width: 500px) {
+    .item {
+       text-align: justify;
+    }
+}

@@ -13,6 +13,9 @@ var server = {
         webApp.use('/node_modules', express.static(
             path.resolve('node_modules')
         ));
+        webApp.use('/images', express.static(
+            path.resolve('web/images')
+        ));
         webApp.use('/views', express.static(
             path.resolve('web/views')
         ));
