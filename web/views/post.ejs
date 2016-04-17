@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DEFN</title>
+    <link rel="shortcut icon" type="image/png" href="/images/chevron.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.js"></script>
+    <script src="node_modules/angular2/bundles/http.js"></script>
+    <script>
+        System.config({
+            packages: {
+                post: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                },
+                posts: {defaultExtension: 'js'}
+            }
+        });
+        System.import('post/main')
+                .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+<span class="invisible" id="url"><%= url %></span>
+<post>Cargando...</post>
+</body>
+</html>

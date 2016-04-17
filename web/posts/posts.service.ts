@@ -20,4 +20,9 @@ export class PostsService {
                 .map(response => response.json());
     }
 
+    getPostByUrl(url: string) {
+        return this.http.get('/get/post/by/url/' + url)
+                .map(response => response.json());
+    }
+
 }

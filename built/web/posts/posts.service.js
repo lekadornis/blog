@@ -28,6 +28,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                     return this.http.get('get/posts')
                         .map(function (response) { return response.json(); });
                 };
+                PostsService.prototype.getPostByUrl = function (url) {
+                    return this.http.get('/get/post/by/url/' + url)
+                        .map(function (response) { return response.json(); });
+                };
                 PostsService = __decorate([
                     core_1.Component({
                         providers: [http_1.HTTP_PROVIDERS]

@@ -10,27 +10,36 @@ var express = require('express'),
 
 var server = {
     createRoutes : function () {
-        webApp.use('/node_modules', express.static(
+        webApp.use('*/node_modules', express.static(
             path.resolve('node_modules')
         ));
-        webApp.use('/images', express.static(
+        webApp.use('*/images', express.static(
             path.resolve('web/images')
         ));
-        webApp.use('/views', express.static(
+        webApp.use('*/views', express.static(
             path.resolve('web/views')
         ));
-        webApp.use('/styles', express.static(
+        webApp.use('*/styles', express.static(
             path.resolve('web/styles')
         ));
+
         webApp.use('/blog', express.static(
             path.resolve('built/web/blog')
+        ));
+        webApp.use('/:year/:month/:day/post', express.static(
+            path.resolve('built/web/post')
         ));
         webApp.use('/posts', express.static(
             path.resolve('built/web/posts')
         ));
+        webApp.use('/:year/:month/:day/posts', express.static(
+            path.resolve('built/web/posts')
+        ));
 
+        webApp.get('/get/post/by/url/:url', apiController.getPostByUrl);
         webApp.get('/get/posts', apiController.getPosts);
         webApp.get('/ng-tests', testsController.unitTests);
+        webApp.get('/:year/:month/:day/:url', blogController.getPost);
         webApp.get('/', blogController.index);
         webApp.get('*', defaultsController.notFound);
     },
@@ -41,7 +50,9 @@ var server = {
             turnOnMessage = Date(Date.now())
                                 + ' - ' + ipaddress
                                 + ':' + port;
-        
+
+        webApp.set('views', './web/views');
+        webApp.set('view engine', 'ejs');
         webApp.listen(port, ipaddress, function () {
             console.log(turnOnMessage);
         });
