@@ -33,7 +33,13 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http'], fu
                         .subscribe(function (posts) { return _this.posts = posts; });
                 };
                 BlogComponent.prototype.getPosts = function () {
-                    return this._postsService.getPosts();
+                    this.url = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+                    if (this.url) {
+                        return this._postsService.getPostByUrl(this.url);
+                    }
+                    else {
+                        return this._postsService.getPosts();
+                    }
                 };
                 BlogComponent = __decorate([
                     core_1.Component({

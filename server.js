@@ -26,8 +26,8 @@ var server = {
         webApp.use('/blog', express.static(
             path.resolve('built/web/blog')
         ));
-        webApp.use('/:year/:month/:day/post', express.static(
-            path.resolve('built/web/post')
+        webApp.use('/:year/:month/:day/blog', express.static(
+            path.resolve('built/web/blog')
         ));
         webApp.use('/posts', express.static(
             path.resolve('built/web/posts')
@@ -37,10 +37,11 @@ var server = {
         ));
 
         webApp.get('/get/post/by/url/:url', apiController.getPostByUrl);
-        webApp.get('/get/posts', apiController.getPosts);
+        webApp.get('*/get/posts', apiController.getPosts);
         webApp.get('/ng-tests', testsController.unitTests);
-        webApp.get('/:year/:month/:day/:url', blogController.getPost);
+        webApp.get('/:year/:month/:day/:url', blogController.index);
         webApp.get('/', blogController.index);
+        
         webApp.get('*', defaultsController.notFound);
     },
     start : function () {

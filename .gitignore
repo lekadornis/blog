@@ -3,5 +3,4 @@
 /nbproject/
 /typings/
 typings.json
-.idea/
-npm-debug.log
+npm-debug.log.*

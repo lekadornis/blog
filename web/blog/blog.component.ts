@@ -16,6 +16,7 @@ export class BlogComponent implements OnInit {
     
     public title = 'DEFN';
     public posts : Post[];
+    public url : string;
     
     ngOnInit() {
         this.getPosts()
@@ -25,6 +26,11 @@ export class BlogComponent implements OnInit {
     }
     
     getPosts() {
-        return this._postsService.getPosts();
+        this.url = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+        if (this.url) {
+            return this._postsService.getPostByUrl(this.url);            
+        } else {
+            return this._postsService.getPosts();            
+        }
     }
 }

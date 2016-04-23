@@ -1,4 +1,4 @@
-db.posts.remove();
+db.posts.remove({});
 
 db.posts.insert([
     { 'title': 'run();', 
