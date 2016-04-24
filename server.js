@@ -36,8 +36,8 @@ var server = {
             path.resolve('built/web/posts')
         ));
 
-        webApp.get('/get/post/by/url/:url', apiController.getPostByUrl);
-        webApp.get('*/get/posts', apiController.getPosts);
+        webApp.get('/get/post/:url', apiController.getPosts);
+        webApp.get('/get/post', apiController.getPosts);
         webApp.get('/ng-tests', testsController.unitTests);
         webApp.get('/:year/:month/:day/:url', blogController.index);
         webApp.get('/', blogController.index);

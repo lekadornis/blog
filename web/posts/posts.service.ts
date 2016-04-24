@@ -14,14 +14,9 @@ export class PostsService {
     constructor(http: Http) {
         this.http = http;
     }
-    
-    getPosts() {
-        return this.http.get('get/posts')
-                .map(response => response.json());
-    }
 
-    getPostByUrl(url: string) {
-        return this.http.get('/get/post/by/url/' + url)
+    getPosts(url: string) {
+        return this.http.get('/get/post/' + url)
                 .map(response => response.json());
     }
 

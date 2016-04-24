@@ -34,10 +34,10 @@ System.register(['angular2/testing', 'angular2/http', 'angular2/core', 'rxjs/add
                 function MockPostsService() {
                     _super.apply(this, arguments);
                 }
-                MockPostsService.prototype.getPosts = function () {
+                MockPostsService.prototype.getPosts = function (url) {
                     return Rx_1.Observable.of(new Object()).map(function (posts) { return [
-                        { "title": "Title 1 mocked", "content": "Text 1" },
-                        { "title": "Title 2 mocked", "content": "Text 2" }
+                        { "title": "Title 1 mocked", "content": "Text 1", "url": "fancy-post-1" },
+                        { "title": "Title 2 mocked", "content": "Text 2", "url": "fancy-post-2" }
                     ]; });
                 };
                 return MockPostsService;

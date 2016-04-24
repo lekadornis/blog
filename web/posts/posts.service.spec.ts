@@ -18,7 +18,7 @@ describe('Posts Service', () => {
     
     it('should return posts', injectAsync([PostsService], 
         (service: PostsService) => {
-            return service.getPosts().toPromise().then((posts) => {
+            return service.getPosts('').toPromise().then((posts) => {
                 expect(posts.length).toBeGreaterThan(0);
             });
         }

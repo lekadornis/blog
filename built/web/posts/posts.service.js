@@ -24,12 +24,8 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                 function PostsService(http) {
                     this.http = http;
                 }
-                PostsService.prototype.getPosts = function () {
-                    return this.http.get('get/posts')
-                        .map(function (response) { return response.json(); });
-                };
-                PostsService.prototype.getPostByUrl = function (url) {
-                    return this.http.get('/get/post/by/url/' + url)
+                PostsService.prototype.getPosts = function (url) {
+                    return this.http.get('/get/post/' + url)
                         .map(function (response) { return response.json(); });
                 };
                 PostsService = __decorate([

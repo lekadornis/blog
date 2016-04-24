@@ -16,11 +16,11 @@ import {PostsService} from '../posts/posts.service';
 
 class MockPostsService extends PostsService {
     
-    getPosts() {
+    getPosts(url: string) {
         return Observable.of(new Object()).map(
             posts => [
-                { "title": "Title 1 mocked", "content": "Text 1" },
-                { "title": "Title 2 mocked", "content": "Text 2" }
+                { "title": "Title 1 mocked", "content": "Text 1", "url": "fancy-post-1" },
+                { "title": "Title 2 mocked", "content": "Text 2", "url": "fancy-post-2" }
             ]
         );
     }

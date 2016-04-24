@@ -27,10 +27,6 @@ export class BlogComponent implements OnInit {
     
     getPosts() {
         this.url = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
-        if (this.url) {
-            return this._postsService.getPostByUrl(this.url);            
-        } else {
-            return this._postsService.getPosts();            
-        }
+        return this._postsService.getPosts(this.url);            
     }
 }

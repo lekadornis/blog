@@ -34,12 +34,7 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http'], fu
                 };
                 BlogComponent.prototype.getPosts = function () {
                     this.url = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
-                    if (this.url) {
-                        return this._postsService.getPostByUrl(this.url);
-                    }
-                    else {
-                        return this._postsService.getPosts();
-                    }
+                    return this._postsService.getPosts(this.url);
                 };
                 BlogComponent = __decorate([
                     core_1.Component({
