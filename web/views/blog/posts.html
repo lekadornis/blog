@@ -1,16 +1,23 @@
-<h1 id="blog-name">{{title}}</h1>
-
-<div class="container">
-    <div class="row row-centered">
-        <div *ngFor="#post of posts" class="col-xs-6 col-centered col-min">
-            <div class="item post-title">
-                <span [innerHTML]="post.title"></span>
-                <span class="label label-info">{{post.date}}</span>
-                <span><a class="glyphicon glyphicon-link pull-right" href="{{post.url}}"></a></span>
+<div class="posts" itemscope="" itemtype="http://schema.org/Blog">
+    <h1 id="blog-name" itemprop="name">{{title}}</h1>
+    <div class="container">
+        <div class="row row-centered">
+            <div itemscope itemtype="http://schema.org/BlogPosting" *ngFor="#post of posts" class="col-xs-6 col-centered col-min">
+                 <div class="item post-title">
+                    <span itemprop="headline" class="text-left" [innerHTML]="post.title"></span>
+                    <span><a class="glyphicon glyphicon-link pull-right" href="{{post.url}}" itemprop="url"></a></span>
+                </div>
+                <div class="post-date">
+                    <span itemprop="datePublished" class="label label-info">{{post.date}}</span>
+                </div>
+                <div itemprop="articleBody" class="item post-body" [innerHTML]="post.content"></div>
+                <div class="author text-right" itemprop="author">
+                    <span itemscope itemtype="http://schema.org/Person">
+                        Escrito por <span itemprop="name">{{post.author}}</span>
+                    </span>
+                </div>            
             </div>
-            <div class="item post-body" [innerHTML]="post.content"></div>
         </div>
     </div>
+    <footer class="text-center license"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Copyright &copy; DEFN.ES</a></footer>
 </div>
-
-<footer class="text-center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</footer>

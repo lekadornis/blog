@@ -11,13 +11,17 @@ body {
     font-size: 1.7em;
     font-weight: 700;
     color: #424242;
-    text-transform: uppercase;
 }
 
-.post-body {
+.post-body, .author {
     font-family: 'Inconsolata';
     font-size: 1.2em;
     font-weight: 400;
+}
+
+.author {
+    margin-bottom: 3em;
+    margin-right: 1em;
 }
 
 #blog-name {
@@ -73,7 +77,15 @@ h1 {
 .item {
     width:100%;
     height:100%;
-    padding:16px 8px;
+    padding: 6px 8px 4px 8px;
+}
+
+.post-date {
+    padding: 2px 8px 6px 8px;
+    font-family: 'Inconsolata';
+    font-size: 1.75em;
+    font-weight: 400;
+    color: #424242;
 }
 
 .content:before {
@@ -83,7 +95,7 @@ h1 {
 
 .label {
     vertical-align: middle;
-    font-size: 50%;
+    font-size: 60%;
     font-weight: 700;
     border-radius: .25em;
 }
@@ -93,8 +105,8 @@ h1 {
     color: #3299BB;
 }
 
-.item {
-   text-align: left;
+.license {
+    margin-bottom: 2em;
 }
 
 :host >>> a {
