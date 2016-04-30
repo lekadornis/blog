@@ -16,21 +16,11 @@
     margin-right: 1em;
 }
 
-#blog-name {
-    font-family: 'Inconsolata';
-    font-size: 7em;
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: #FF9900;
-    margin-bottom: 0.75em;
-}
-
 .post-date {
     padding: 2px 8px 6px 8px;
     font-family: 'Inconsolata';
     font-size: 1.75em;
     font-weight: 400;
-    color: #424242;
 }
 
 .label {
@@ -42,15 +32,15 @@
 
 .label-info {
     background-color: #E9E9E9;
-    color: #3299BB;
+    color: #626F78;
 }
 
 :host >>> a {
     text-decoration: none;
-    color: #3299BB;
+    color: #DD577A;
 }
 
 :host >>> span.bolder {
-    background-color: #BCBCBC;
+    background-color: #FFF0CF;
     padding : 0.2em;
 }

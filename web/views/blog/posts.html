@@ -3,6 +3,7 @@
     <div class="container">
         <div class="row row-centered">
             <div itemscope itemtype="http://schema.org/BlogPosting" *ngFor="#post of posts" class="col-xs-6 col-centered col-min">
+                 <hr>
                  <div class="item post-title">
                     <span itemprop="headline" class="text-left" [innerHTML]="post.title"></span>
                     <span><a class="glyphicon glyphicon-link pull-right" href="{{post.url}}" itemprop="url"></a></span>
