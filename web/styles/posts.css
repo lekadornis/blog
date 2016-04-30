@@ -1,0 +1,56 @@
+.post-title {
+    font-family: 'Inconsolata';
+    font-size: 1.7em;
+    font-weight: 700;
+    color: #424242;
+}
+
+.post-body, .author {
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.author {
+    margin-bottom: 3em;
+    margin-right: 1em;
+}
+
+#blog-name {
+    font-family: 'Inconsolata';
+    font-size: 7em;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #FF9900;
+    margin-bottom: 0.75em;
+}
+
+.post-date {
+    padding: 2px 8px 6px 8px;
+    font-family: 'Inconsolata';
+    font-size: 1.75em;
+    font-weight: 400;
+    color: #424242;
+}
+
+.label {
+    vertical-align: middle;
+    font-size: 60%;
+    font-weight: 700;
+    border-radius: .25em;
+}
+
+.label-info {
+    background-color: #E9E9E9;
+    color: #3299BB;
+}
+
+:host >>> a {
+    text-decoration: none;
+    color: #3299BB;
+}
+
+:host >>> span.bolder {
+    background-color: #BCBCBC;
+    padding : 0.2em;
+}

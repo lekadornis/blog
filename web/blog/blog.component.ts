@@ -5,7 +5,7 @@ import {Post}                   from '../posts/post';
 
 @Component({
     selector: 'blog',
-    styleUrls: ['styles/blog.css'],
+    styleUrls: ['styles/posts.css'],
     templateUrl: 'views/blog/posts.html',
     providers: [PostsService, HTTP_PROVIDERS]
 })
