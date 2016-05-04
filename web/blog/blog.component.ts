@@ -4,9 +4,9 @@ import {HTTP_PROVIDERS}         from 'angular2/http';
 import {Post}                   from '../posts/post';
 
 @Component({
-    selector: 'blog',
-    styleUrls: ['styles/posts.css'],
-    templateUrl: 'views/blog/posts.html',
+    selector: 'body',
+    styleUrls: ['styles/blog.css'],
+    templateUrl: 'views/blog/blog.html',
     providers: [PostsService, HTTP_PROVIDERS]
 })
 

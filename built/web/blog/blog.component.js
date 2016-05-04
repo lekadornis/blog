@@ -38,9 +38,9 @@ System.register(['angular2/core', '../posts/posts.service', 'angular2/http'], fu
                 };
                 BlogComponent = __decorate([
                     core_1.Component({
-                        selector: 'blog',
-                        styleUrls: ['styles/posts.css'],
-                        templateUrl: 'views/blog/posts.html',
+                        selector: 'body',
+                        styleUrls: ['styles/blog.css'],
+                        templateUrl: 'views/blog/blog.html',
                         providers: [posts_service_1.PostsService, http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [posts_service_1.PostsService])
